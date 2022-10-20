@@ -1,0 +1,68 @@
+
+.fontawesomeicon {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: red;
+  }
+/* Step 3: Set the CSS content code for the icon. */
+/* Brand icon*/
+/* .twitter::before {
+    content: '\f099';
+  } */
+  
+  /* Regular Icon */
+  /* .user::before {
+    content: '\f007';
+  } */
+  
+  /* Solid Icon */
+  /* .cloud::before {
+    content: '\f0c2';
+  } */
+/* =============================================================== */
+
+/* Step 4: Set the icon font style */
+
+/* Brand icon*/
+/* .twitter::before {
+    content: '\f099';
+    font: var(--fa-font-brands);
+  } */
+  
+  /* Regular Icon */
+  /* .user::before {
+    content: '\f007';
+    font: var(--fa-font-regular);
+  } */
+  
+  /* Solid Icon */
+  /* .cloud::before {
+    content: '\f0c2';
+    font: var(--fa-font-solid);
+  } */
+
+/* Continued below for Step 4 */
+
+/* Brand icon*/
+.twitter::before {
+    content: '\f099';
+    /* font: var(--fa-font-brands); */
+    font-family: 'Font Awesome 6 brands';
+  
+    font-weight: 400;
+  }
+  
+  /* Regular Icon */
+  .user::before {
+    content: '\f007';
+    font-family: 'Font Awesome 5 free';
+    font-weight: 400;
+  }
+  
+  /* Solid Icon */
+  .cloud::before {
+    content: '\f0c2';
+    font-family: 'Font Awesome 6 free';
+    font-weight: 900;
+  }

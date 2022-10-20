@@ -1,0 +1,229 @@
+<!-- CSS: :before and :after pseudo elements in practice -->
+
+<!-- By definition, :before and :after are CSS pseudo elements. Use them to insert something before or after the content of an element. -->
+
+
+<style>
+    .container {
+        max-width: 1440px;
+        min-height: 800px;
+        /* background-color: lightblue; */
+        border: 5px red solid;
+        padding: 10px;
+        margin: 0 auto;
+        border-radius: 15px;
+
+
+
+    }
+
+    /* Syntax ============================================*/
+    /* p:before{
+        content: "This is ";
+        font-weight: bold;
+        color: blue;
+        font-style: italic;
+    } */
+
+    /* Icons ============================================*/
+    /* p:before{
+        content: "";
+        display: block;
+        background: url(./Screen\ Shot\ 2022-10-06\ at\ 9.05.29\ AM.png);
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin: 0 6px 0 0;
+    } */
+
+    /* Styling external links ============================================*/
+    a {
+        /* text-decoration: none; */
+        font-weight: bold;
+        color: rebeccapurple;
+    }
+
+    .costar:after {
+        content: "";
+        display: inline-block;
+        background: url(./1614705426018.jpeg) no-repeat top right;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+
+    .linkedin::before {
+        content: "";
+        display: inline-block;
+        background: url(./LinkedIn_logo_initials.png);
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* CSS - Breadcrumbs (navigation) */
+    .nav {
+        text-decoration: none;
+        font-weight: bold;
+        color: rebeccapurple;
+    }
+
+    .nav::after {
+        content: " |";
+    }
+
+    .nav:first-child::before {
+        content: " » ";
+    }
+
+    .nav:last-child::after {
+        content: "";
+    }
+
+    /* CSS - clearing floats */
+    .float {
+        float: left;
+        display: block;
+        width: 100px;
+        border: 2px red solid;
+        text-align: center;
+        text-decoration: none;
+        padding: 2px;
+        margin: 2px;
+
+    }
+
+    .float1::before {
+        content: "";
+        display: block;
+        clear: both;
+
+    }
+
+    /* Quoting */
+    span.quoted {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
+        ;
+        display: block;
+        margin: 14px 0 0 0;
+        font-style: italic;
+    }
+
+    span.quoted:before {
+        content: "“";
+        font-size: 40px;
+        color: #999;
+        /* line-height: 0; */
+        display: inline-block;
+        margin: 0 6px 0 0;
+    }
+
+    span.quoted:after {
+        content: " ”";
+        font-size: 40px;
+        color: #999;
+        line-height: 0;
+        display: inline-block;
+        margin: 0 0 0 4px;
+    }
+
+    /* Arrows */
+    h2.whatIsCSS {
+        float: left;
+        width: 170px;
+    }
+
+    .whatIsCSS {
+        float: left;
+        width: 170px;
+    }
+
+    .popup {
+        float: left;
+        width: 340px;
+        background-color: #727272;
+        padding: 10px;
+        border-radius: 6px;
+        color: white;
+        position: relative;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .popup:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-right: 12px solid #727272;
+        position: absolute;
+        top: 16px;
+        left: -12px;
+    }
+
+ 
+</style>
+
+<div class="container">
+    <h1>CSS: :before and :after pseudo elements in practice</h1>
+    <p>Click link to the <a
+            href="https://krasimirtsonev.com/blog/article/CSS-before-and-after-pseudo-elements-in-practice">documentatioon</a>.
+    </p>
+
+    <!-- <p>Paragraph text</p> -->
+
+    <h3> <u>Styling external links</u> </h3>
+    <p>Michael Lay is a frond-end developer at <a class="costar" href="https://www.loopnet.com/solutions/">Costar Group
+            - LoopNet</a> . He like to learn from other developer on <a class="linkedin" href="">LinkedIn</a>.
+
+    </p>
+
+    <!-- Breadcrumbs (navigation) -->
+    <h3> <u>Breadcrumbs (navigation)</u> </h3>
+    <p>
+        <a class="nav" href="#">Home</a>
+        <a class="nav" href="#">Team</a>
+        <a class="nav" href="#">Developers</a>
+
+    </p>
+
+    <h3> <u>Clearing floats</u> </h3>
+    <!-- Clearing floats -->
+    <a class="float" href="#">Home</a>
+    <a class="float" href="#">Products</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, aperiam quisquam consequatur, facilis eveniet
+        amet quo vel explicabo distinctio illo recusandae, doloribus repellat. Expedita veniam, earum eligendi culpa
+        maiores ipsa.</p>
+
+    <p>The text should be below the links and instead of adding new DOM node you can use :before pseudo element to clear
+        the float:</p>
+
+    <a class="float" href="#">Home</a>
+    <a class="float" href="#">Products</a>
+    <p class="float1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, aperiam quisquam consequatur,
+        facilis eveniet amet quo vel explicabo distinctio illo recusandae, doloribus repellat. Expedita veniam, earum
+        eligendi culpa maiores ipsa.</p>
+
+    <!-- Quoting -->
+    <h3><u>Quoting</u></h3>
+    <!-- :before and :after are perfect for quoting text. Let's say that we have a smart thought and we want to format it. -->
+
+    <p>
+        Martin Fowler said
+        <span class="quoted">Any fool can write code that a computer can understand.
+            Good programmers write code that humans can understand.</span>
+    </p>
+
+    <!-- Arrows -->
+    <h3><u>Arrows</u></h3>
+    <h2 class="whatIsCSS">What is CSS?</h2>
+    <div class="popup">
+        Cascading Style Sheets is a style sheet language used for describing
+        the presentation semantics of a document written in a markup language.
+    </div>
+    <br>
+
+</div>
