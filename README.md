@@ -1,4 +1,4 @@
-# fontAwesomeInconsand :before and :after pseudo CSS
+# fontAwesomeIncons and :before and :after pseudo CSS
 
 ### Documentation can be found here: https://www.angularjswiki.com/fontawesome/csscontentcode/ and https://krasimirtsonev.com/blog/article/CSS-before-and-after-pseudo-elements-in-practice
 
